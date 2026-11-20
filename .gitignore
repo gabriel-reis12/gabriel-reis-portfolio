@@ -1,0 +1,11 @@
+node_modules
+dist
+.vercel
+*.local
+.DS_Store
+
+# Keep raw source screenshots, private workbook, agent specs, and internal audit docs out of public Git history
+public/images/
+banco de dados/
+agents/
+docs/

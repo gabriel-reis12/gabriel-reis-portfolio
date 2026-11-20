@@ -1,0 +1,239 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-top: 1px solid var(--color-border-subtle);
+  border-left: 1px solid var(--color-border-subtle);
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: clamp(1.45rem, 2.8vw, 2rem);
+  background: var(--color-bg-canvas);
+  border-right: 1px solid var(--color-border-subtle);
+  border-bottom: 1px solid var(--color-border-subtle);
+  transition: background-color var(--transition-micro);
+}
+
+.card:hover {
+  background: var(--color-bg-surface);
+}
+
+.cardHead {
+  display: flex;
+  align-items: baseline;
+  gap: 0.7rem;
+}
+
+.num {
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+}
+
+.domain {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.25;
+}
+
+.summary {
+  font-size: 0.92rem;
+  color: var(--color-text-muted);
+  line-height: 1.55;
+  max-width: 46ch;
+}
+
+.skillList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 0.4rem;
+}
+
+.skillTag {
+  padding: 0.25rem 0.56rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-secondary);
+}
+
+.expandControl {
+  margin-top: 1.75rem;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.expandBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: var(--control-height);
+  padding: 0 var(--control-px);
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--color-text-primary);
+  transition:
+    border-color var(--transition-micro),
+    background-color var(--transition-micro),
+    transform var(--transition-micro);
+}
+
+.expandBtn:hover {
+  border-color: var(--color-border-accent);
+  background: var(--color-bg-elevated);
+  transform: translateY(-1px);
+}
+
+.chevron {
+  flex-shrink: 0;
+  color: var(--color-accent);
+  transition: transform var(--transition-fast);
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.fullStackPanel {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.subGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .subGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1080px) {
+  .subGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.subCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1.2rem;
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-sm);
+}
+
+.subTitle {
+  font-family: var(--font-display);
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+}
+
+.subDesc {
+  font-size: 0.82rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.lowerGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 900px) {
+  .lowerGrid {
+    grid-template-columns: 1.3fr 0.9fr;
+  }
+}
+
+.workflowCard,
+.studyCard {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1.25rem;
+  border-radius: var(--radius-sm);
+}
+
+.workflowCard {
+  background: var(--color-bg-surface);
+  border: 1px solid var(--color-border-default);
+}
+
+.studyCard {
+  background: var(--color-bg-surface-sunken);
+  border: 1px solid var(--color-border-subtle);
+}
+
+.workflowBadge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.45rem;
+  padding: 0.24rem 0.55rem;
+  background: var(--color-accent-subtle);
+  border: 1px solid rgba(200, 255, 61, 0.3);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+  color: var(--color-accent);
+}
+
+.studyBadge {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: 0.24rem 0.55rem;
+  background: rgba(244, 245, 242, 0.06);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+}
+
+.toolPill {
+  padding: 0.25rem 0.55rem;
+  background: var(--color-bg-elevated);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--color-text-primary);
+}
+
+.studyPill {
+  padding: 0.25rem 0.54rem;
+  border: 1px dashed var(--color-border-default);
+  border-radius: var(--radius-xs);
+  font-family: var(--font-mono);
+  font-size: 0.71rem;
+  color: var(--color-text-muted);
+}
